@@ -47,7 +47,7 @@ Managing large libraries of 3D printing models (`.3mf`, `.step`, `.stl`, `.obj`)
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
+   git clone https://github.com/yedp123>/3D-Print-Asset-library.git
    cd "3D Print Asset library"
    ```
 
