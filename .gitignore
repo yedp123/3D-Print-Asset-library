@@ -1,0 +1,49 @@
+# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Rust / Cargo
+target/
+src-tauri/target/
+**/*.rs.bk
+Cargo.lock.back
+
+# Tauri builds and installers
+release/
+
+# Application runtime cache & metadata generated in asset libraries
+.thumbnails/
+_library_cache.json
+
+# Environment variables & editor settings
+.env
+.env.*
+!.env.example
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*

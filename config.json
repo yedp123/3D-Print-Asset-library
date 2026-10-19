@@ -1,0 +1,17 @@
+{
+  "root_path": "E:\\_3MF_LIBRARY\\Assets",
+  "bambu_studio_exe_path": "C:\\Program Files\\Bambu Studio\\bambu-studio.exe",
+  "default_cost_per_kg": 85.0,
+  "currency_symbol": "¥",
+  "last_updated_by": "wonderlabs",
+  "available_tags": [
+    { "id": "people", "label": "People & Characters", "icon": "User", "color": "#3B82F6" },
+    { "id": "vehicle", "label": "Vehicles", "icon": "Car", "color": "#F59E0B" },
+    { "id": "furniture", "label": "Furniture", "icon": "Armchair", "color": "#10B981" },
+    { "id": "architecture", "label": "Architecture", "icon": "Building2", "color": "#8B5CF6" },
+    { "id": "props", "label": "Props & Accessories", "icon": "Package", "color": "#EC4899" },
+    { "id": "nature", "label": "Nature & Terrain", "icon": "Trees", "color": "#22C55E" },
+    { "id": "mechanical", "label": "Mechanical / Functional", "icon": "Cog", "color": "#64748B" },
+    { "id": "diorama", "label": "Diorama Sets", "icon": "Layers", "color": "#06B6D4" }
+  ]
+}
