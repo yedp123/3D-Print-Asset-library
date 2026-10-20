@@ -1,0 +1,65 @@
+name: Build Mac Portable Release
+
+# Allows you to manually trigger this build anytime from GitHub with a click of a button
+on:
+  workflow_dispatch:
+
+jobs:
+  build-macos:
+    # This instructs GitHub to run this on an actual Apple Mac computer in the cloud
+    runs-on: macos-latest
+
+    steps:
+      # 1. Download your repository's code onto the Mac runner
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Install Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # 3. Install Rust (required by Tauri)
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      # 4. Install all project dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # 5. Compile the Tauri app
+      - name: Build Tauri App
+        run: npm run tauri build
+
+      # 6. Gather the app and editable config files into one folder
+      - name: Package Mac Portable Distribution
+        run: |
+          mkdir -p dist-mac/Bambu-Asset-Manager-Mac
+          
+          # Copy the compiled application binary
+          cp src-tauri/target/release/bambu-asset-manager dist-mac/Bambu-Asset-Manager-Mac/
+          chmod +x dist-mac/Bambu-Asset-Manager-Mac/bambu-asset-manager
+          
+          # Copy the editable configuration files
+          cp filament_catalog.json dist-mac/Bambu-Asset-Manager-Mac/
+          if [ -f config.json ]; then
+            cp config.json dist-mac/Bambu-Asset-Manager-Mac/
+          fi
+          
+          # Add a quick instructions note
+          echo "Bambu Studio 3D Asset Manager for macOS" > dist-mac/Bambu-Asset-Manager-Mac/README.txt
+          echo "You can edit config.json and filament_catalog.json directly in this folder." >> dist-mac/Bambu-Asset-Manager-Mac/README.txt
+          
+          # Compress everything into a ready-to-share ZIP file
+          cd dist-mac
+          zip -r ../Bambu-Asset-Manager-macOS.zip Bambu-Asset-Manager-Mac
+
+      # 7. Upload the final zip file so you can download it
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bambu-Asset-Manager-macOS
+          path: Bambu-Asset-Manager-macOS.zip
+          retention-days: 14
