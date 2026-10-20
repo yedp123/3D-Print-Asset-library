@@ -4,6 +4,9 @@ An asset browsing and management desktop application tailored for 3D printing en
 
 > **Note:** This project was vibe coded in a freestyle manner with no specific architecture in mind. Expect pragmatism, rapid iteration, and direct solutions over strict design patterns!
 
+<img width="1920" height="1040" alt="Preview_2" src="https://github.com/user-attachments/assets/702eade9-9e4d-4ce7-92a0-985bdbdf5353" />
+
+
 ---
 
 ## Overview
@@ -44,7 +47,7 @@ Managing large libraries of 3D printing models (`.3mf`, `.step`, `.stl`, `.obj`)
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
+   git clone https://github.com/yedp123/3D-Print-Asset-library.git
    cd "3D Print Asset library"
    ```
 
